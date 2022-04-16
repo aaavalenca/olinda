@@ -36,7 +36,7 @@ public class Parallax : MonoBehaviour
     {
         offsetSpeed = _gameController._groundSpeed / 2;
         offset += offsetIncr;
-        objectMat.SetTextureOffset("_MainTex", new Vector2(offset * offsetSpeed, 0));
+        objectMat.SetTextureOffset("_MainTex", new Vector2(offset * offsetSpeed, -0.001f));
         
     }
 }
