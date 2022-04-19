@@ -28,7 +28,6 @@ public class Parallax : MonoBehaviour
         objectMat = renderObj.material;
         
         _gameController = (GameController)FindObjectOfType(typeof(GameController));
-        Debug.Log(offsetSpeed);
     }
 
     // Update is called once per frame

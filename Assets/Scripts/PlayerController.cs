@@ -10,6 +10,9 @@ public class PlayerController : MonoBehaviour
     public float speed = 0f;
     public bool isGrounded = false;
     public float jumpForce = 650f;
+    public int life = 10000;
+
+    
     
     private Animator anim;
     private Rigidbody2D rig;
@@ -55,7 +58,7 @@ public class PlayerController : MonoBehaviour
         else
         {
             anim.SetBool(isGroundBool, false);
-            isGrounded = true;
+            isGrounded = false;
         }
     }
 
@@ -66,6 +69,16 @@ public class PlayerController : MonoBehaviour
             rig.velocity = Vector2.zero;
             rig.AddForce(new Vector2(0, jumpForce));
             
+        }
+
+    }
+    
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.tag == "Crowd")
+        {
+            life = life - 1;
+            Debug.Log(life.ToString());
         }
 
     }

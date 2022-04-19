@@ -30,7 +30,6 @@ public class RepeatGround : MonoBehaviour
                 //spriteRenderer.size = new Vector2();
                 // dá para fazer as valas abertas somando valores ao x (podem ser aleatórios, ou em função da velocidade)
                 _tempFloor.transform.position = new Vector3(transform.position.x + _gameController._groundSize * transform.localScale.x, transform.position.y, 0);
-                Debug.Log(transform.localScale.x);
                 _floorInst = true;
             }
         }
