@@ -752,7 +752,7 @@ MonoBehaviour:
   _groundSize: 49
   _groundSpeed: 2
   _groundPrefab: {fileID: 231127906174556019, guid: 25f14802d59874c098737493b4fb233b, type: 3}
-  _timeObstacle: 2
+  _timeObstacle: 4
   _prefabObstacle: {fileID: 8721779556400218400, guid: 7373b0f29a3874c25b9285f11ed7b48a, type: 3}
   speedObstacle: 5
 --- !u!4 &1862595418
@@ -1031,6 +1031,7 @@ MonoBehaviour:
   speed: 0
   isGrounded: 0
   jumpForce: 850
+  life: 10000
   LayerGround:
     serializedVersion: 2
     m_Bits: 64
