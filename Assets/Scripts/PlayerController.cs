@@ -21,6 +21,11 @@ public class PlayerController : MonoBehaviour
     public Transform checkground;
     public string isGroundBool = "isGround";
     
+    void Awake () {
+        QualitySettings.vSyncCount = 0;  // VSync must be disabled
+        Application.targetFrameRate = 45;
+    }
+    
     void Start()
     {
         rig = GetComponent<Rigidbody2D>();

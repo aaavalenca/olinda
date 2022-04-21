@@ -18,6 +18,11 @@ public class GameController : MonoBehaviour
     public GameObject _prefabObstacle;
     public float speedObstacle;
     
+    void Awake () {
+        QualitySettings.vSyncCount = 0;  // VSync must be disabled
+        Application.targetFrameRate = 45;
+    }
+    
     // Start is called before the first frame update
     void Start()
     {

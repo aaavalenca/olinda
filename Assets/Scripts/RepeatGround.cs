@@ -10,7 +10,12 @@ public class RepeatGround : MonoBehaviour
 
     public bool _floorInst = false;
     
-    // Start is called before the first frame update
+    
+    void Awake () {
+        QualitySettings.vSyncCount = 0;  // VSync must be disabled
+        Application.targetFrameRate = 45;
+    }
+
     void Start()
     {
         // o script em si é um objeto do tipo GameController. Assim que o pegamos.

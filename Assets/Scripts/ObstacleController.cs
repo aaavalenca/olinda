@@ -8,6 +8,11 @@ public class ObstacleController : MonoBehaviour
 
     private Rigidbody2D obstRB;
 
+    void Awake () {
+        QualitySettings.vSyncCount = 0;  // VSync must be disabled
+        Application.targetFrameRate = 45;
+    }
+    
     // Start is called before the first frame update
     void Start()
     {

@@ -15,6 +15,12 @@ public class Parallax : MonoBehaviour
     public string sortingLayer;
     public int orderInLayer;
     
+    void Awake () {
+        QualitySettings.vSyncCount = 0;  // VSync must be disabled
+        Application.targetFrameRate = 45;
+    }
+    
+    
     // Start is called before the first frame update
     void Start()
     {
