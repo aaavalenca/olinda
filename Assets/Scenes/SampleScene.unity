@@ -470,8 +470,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 995331571}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.32, y: 12.97, z: 0}
-  m_LocalScale: {x: 30.5, y: 7.2, z: 1}
+  m_LocalPosition: {x: 18.44, y: 12.83, z: 0}
+  m_LocalScale: {x: 46.846176, y: 10.08, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1510517912}
@@ -635,8 +635,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3422714762468604706, guid: 25f14802d59874c098737493b4fb233b, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 4e6e7c20463f340a1828d694bf9dbe8e, type: 3}
+    - target: {fileID: 3422714762468604706, guid: 25f14802d59874c098737493b4fb233b, type: 3}
       propertyPath: m_SortingOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7414545676855800083, guid: 25f14802d59874c098737493b4fb233b, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7414545676855800083, guid: 25f14802d59874c098737493b4fb233b, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 25f14802d59874c098737493b4fb233b, type: 3}
