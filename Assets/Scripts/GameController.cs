@@ -16,11 +16,11 @@ public class GameController : MonoBehaviour
     [Header("Configuração do Obstáculo")]
     public float _timeObstacle;
     public GameObject _prefabObstacle;
-    public float speedObstacle;
+    public float speedObstacle = 5;
     
     void Awake () {
         QualitySettings.vSyncCount = 0;  // VSync must be disabled
-        Application.targetFrameRate = 45;
+        Application.targetFrameRate = 60;
     }
     
     // Start is called before the first frame update
@@ -42,6 +42,8 @@ public class GameController : MonoBehaviour
         yield return new WaitForSeconds(_timeObstacle);
 
         GameObject TimeObstacleObj = Instantiate(_prefabObstacle);
+
+        speedObstacle += 1;
 
         StartCoroutine("SpawObstacle");
 

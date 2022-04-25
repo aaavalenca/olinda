@@ -17,7 +17,7 @@ public class Parallax : MonoBehaviour
     
     void Awake () {
         QualitySettings.vSyncCount = 0;  // VSync must be disabled
-        Application.targetFrameRate = 45;
+        Application.targetFrameRate = 60;
     }
     
     
