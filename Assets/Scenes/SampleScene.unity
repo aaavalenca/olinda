@@ -164,7 +164,7 @@ GameObject:
   m_Component:
   - component: {fileID: 208731318}
   - component: {fileID: 208731319}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RotatingGround
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -614,7 +614,7 @@ GameObject:
   - component: {fileID: 1087033941}
   - component: {fileID: 1087033940}
   - component: {fileID: 1087033939}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ground 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
