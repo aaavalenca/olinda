@@ -7,15 +7,11 @@ public class GameController : MonoBehaviour
     
     // Propriedades do Chão
     [Header("Configuração do Chão")]
-    public float _groundDestroyed;
-    public float _groundSize;
-    public float _groundSpeed;
-    public GameObject _groundPrefab;
-
-
+    public float groundSpeed = 1;
+    
     [Header("Configuração do Obstáculo")]
-    public float _timeObstacle;
-    public GameObject _prefabObstacle;
+    public float timeObstacle;
+    public GameObject prefabObstacle;
     public float speedObstacle = 5;
     
     void Awake () {
@@ -26,7 +22,7 @@ public class GameController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // _prefabObstacle = GetComponent<>()
+        // prefabObstacle = GetComponent<>()
         StartCoroutine("SpawObstacle");
     }
     
@@ -34,14 +30,19 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+    }
+
+    private void FixedUpdate()
+    {
+        groundSpeed += 0.0000001f;
+
     }
 
     IEnumerator SpawObstacle()
     {
-        yield return new WaitForSeconds(_timeObstacle);
+        yield return new WaitForSeconds(timeObstacle);
 
-        GameObject TimeObstacleObj = Instantiate(_prefabObstacle);
+        GameObject TimeObstacleObj = Instantiate(prefabObstacle);
 
         speedObstacle += 1;
 

@@ -7,7 +7,7 @@ public class Parallax : MonoBehaviour
 
     private Renderer renderObj;
     private Material objectMat;
-    private GameController _gameController;
+    private GameController gameController;
     public float offset;
     public float offsetIncr;
     private float offsetSpeed;
@@ -33,15 +33,15 @@ public class Parallax : MonoBehaviour
         
         objectMat = renderObj.material;
         
-        _gameController = (GameController)FindObjectOfType(typeof(GameController));
+        gameController = (GameController)FindObjectOfType(typeof(GameController));
     }
 
     // Update is called once per frame
     void Update()
     {
-        offsetSpeed = _gameController._groundSpeed / 2;
+        offsetSpeed = gameController.groundSpeed;
         offset += offsetIncr;
-        objectMat.SetTextureOffset("_MainTex", new Vector2(offset * offsetSpeed, -0.001f));
+        objectMat.SetTextureOffset("_MainTex", new Vector2(offset * offsetSpeed, 0f));
         
     }
 }

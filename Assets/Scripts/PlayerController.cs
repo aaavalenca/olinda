@@ -9,10 +9,8 @@ public class PlayerController : MonoBehaviour
 
     public float speed = 0f;
     public bool isGrounded = false;
-    public float jumpForce = 650f;
-    public int life = 10000;
-
-    
+    public float jumpForce = 950f;
+    public int life = 1000;
     
     private Animator anim;
     private Rigidbody2D rig;
