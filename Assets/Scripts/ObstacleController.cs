@@ -5,21 +5,16 @@ using UnityEngine;
 
 public class ObstacleController : MonoBehaviour
 {
-
-    private Rigidbody2D obstRB;
     private GameController gameController;
 
     void Awake () {
-        QualitySettings.vSyncCount = 0;  // VSync must be disabled
+        QualitySettings.vSyncCount = 0;
         Application.targetFrameRate = 60;
     }
     
-    // Start is called before the first frame update
     void Start()
     {
-        obstRB = GetComponent<Rigidbody2D>();
         gameController = FindObjectOfType<GameController>();
-        //obstRB.velocity = new Vector2(-5f, 0);
     }
 
     private void FixedUpdate()

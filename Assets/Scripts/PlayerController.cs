@@ -81,7 +81,7 @@ public class PlayerController : MonoBehaviour
         if (collision.tag == "Crowd")
         {
             life = life - 1;
-            Debug.Log(life.ToString());
+            //Debug.Log(life.ToString());
         }
 
     }
