@@ -165,7 +165,7 @@ GameObject:
   - component: {fileID: 119482080}
   - component: {fileID: 119482083}
   - component: {fileID: 119482082}
-  - component: {fileID: 119482081}
+  - component: {fileID: 119482084}
   m_Layer: 0
   m_Name: casario 4
   m_TagString: 4
@@ -188,22 +188,6 @@ Transform:
   m_Father: {fileID: 1347632742}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &119482081
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 119482079}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0bb78484ce36c40398057942128cd670, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  offset: 0
-  offsetIncr: 0.0005
-  sortingLayer: Default
-  orderInLayer: -1
 --- !u!33 &119482082
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -254,6 +238,23 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &119482084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 119482079}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a807a126208e44a908faf952cf4adaf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  offset: 0
+  offsetIncr: 0.0008
+  sortingLayer: 
+  orderInLayer: 0
+  maxrot: 15
 --- !u!1 &208731317
 GameObject:
   m_ObjectHideFlags: 0
@@ -266,7 +267,7 @@ GameObject:
   - component: {fileID: 208731319}
   m_Layer: 6
   m_Name: RotatingGround
-  m_TagString: Untagged
+  m_TagString: RotatingGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -408,7 +409,7 @@ GameObject:
   - component: {fileID: 740970152}
   - component: {fileID: 740970155}
   - component: {fileID: 740970154}
-  - component: {fileID: 740970153}
+  - component: {fileID: 740970156}
   m_Layer: 0
   m_Name: casario 1
   m_TagString: 1
@@ -431,22 +432,6 @@ Transform:
   m_Father: {fileID: 1347632742}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &740970153
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 740970151}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0bb78484ce36c40398057942128cd670, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  offset: 0
-  offsetIncr: 0.0005
-  sortingLayer: Default
-  orderInLayer: -1
 --- !u!33 &740970154
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -497,6 +482,23 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &740970156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 740970151}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a807a126208e44a908faf952cf4adaf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  offset: 0
+  offsetIncr: 0.0008
+  sortingLayer: 
+  orderInLayer: 0
+  maxrot: 15
 --- !u!1 &751452022
 GameObject:
   m_ObjectHideFlags: 0
@@ -613,7 +615,7 @@ GameObject:
   - component: {fileID: 757124265}
   - component: {fileID: 757124268}
   - component: {fileID: 757124267}
-  - component: {fileID: 757124266}
+  - component: {fileID: 757124269}
   m_Layer: 0
   m_Name: casario 6
   m_TagString: 6
@@ -636,22 +638,6 @@ Transform:
   m_Father: {fileID: 1347632742}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &757124266
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 757124264}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0bb78484ce36c40398057942128cd670, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  offset: 0
-  offsetIncr: 0.0005
-  sortingLayer: Default
-  orderInLayer: -1
 --- !u!33 &757124267
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -702,6 +688,23 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &757124269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 757124264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a807a126208e44a908faf952cf4adaf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  offset: 0
+  offsetIncr: 0.0008
+  sortingLayer: 
+  orderInLayer: 0
+  maxrot: 15
 --- !u!1 &836190068
 GameObject:
   m_ObjectHideFlags: 0
@@ -1013,7 +1016,7 @@ GameObject:
   - component: {fileID: 1126406161}
   - component: {fileID: 1126406164}
   - component: {fileID: 1126406163}
-  - component: {fileID: 1126406162}
+  - component: {fileID: 1126406165}
   m_Layer: 0
   m_Name: casario 2
   m_TagString: 2
@@ -1036,22 +1039,6 @@ Transform:
   m_Father: {fileID: 1347632742}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1126406162
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1126406160}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0bb78484ce36c40398057942128cd670, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  offset: 0
-  offsetIncr: 0.0005
-  sortingLayer: Default
-  orderInLayer: -1
 --- !u!33 &1126406163
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -1102,6 +1089,23 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &1126406165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1126406160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a807a126208e44a908faf952cf4adaf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  offset: 0
+  offsetIncr: 0.0008
+  sortingLayer: 
+  orderInLayer: 0
+  maxrot: 15
 --- !u!1 &1347632741
 GameObject:
   m_ObjectHideFlags: 0
@@ -1127,7 +1131,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1347632741}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11.43, y: 0, z: 0}
+  m_LocalPosition: {x: -17.31, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1165,7 +1169,7 @@ GameObject:
   - component: {fileID: 1383967780}
   - component: {fileID: 1383967783}
   - component: {fileID: 1383967782}
-  - component: {fileID: 1383967781}
+  - component: {fileID: 1383967784}
   m_Layer: 0
   m_Name: casario 0
   m_TagString: 0
@@ -1188,22 +1192,6 @@ Transform:
   m_Father: {fileID: 1347632742}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1383967781
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1383967779}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0bb78484ce36c40398057942128cd670, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  offset: 0
-  offsetIncr: 0.0005
-  sortingLayer: Default
-  orderInLayer: -1
 --- !u!33 &1383967782
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -1254,6 +1242,23 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &1383967784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1383967779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a807a126208e44a908faf952cf4adaf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  offset: 0
+  offsetIncr: 0.0008
+  sortingLayer: 
+  orderInLayer: 0
+  maxrot: 15
 --- !u!1 &1510517911
 GameObject:
   m_ObjectHideFlags: 0
@@ -1402,7 +1407,7 @@ GameObject:
   - component: {fileID: 1692492012}
   - component: {fileID: 1692492015}
   - component: {fileID: 1692492014}
-  - component: {fileID: 1692492013}
+  - component: {fileID: 1692492016}
   m_Layer: 0
   m_Name: casario 5
   m_TagString: 5
@@ -1425,22 +1430,6 @@ Transform:
   m_Father: {fileID: 1347632742}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1692492013
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1692492011}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0bb78484ce36c40398057942128cd670, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  offset: 0
-  offsetIncr: 0.0005
-  sortingLayer: Default
-  orderInLayer: -1
 --- !u!33 &1692492014
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -1491,6 +1480,23 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &1692492016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1692492011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a807a126208e44a908faf952cf4adaf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  offset: 0
+  offsetIncr: 0.0008
+  sortingLayer: 
+  orderInLayer: 0
+  maxrot: 15
 --- !u!1 &1758284845
 GameObject:
   m_ObjectHideFlags: 0
@@ -1502,7 +1508,7 @@ GameObject:
   - component: {fileID: 1758284846}
   - component: {fileID: 1758284849}
   - component: {fileID: 1758284848}
-  - component: {fileID: 1758284847}
+  - component: {fileID: 1758284850}
   m_Layer: 0
   m_Name: casario 3
   m_TagString: 3
@@ -1525,22 +1531,6 @@ Transform:
   m_Father: {fileID: 1347632742}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1758284847
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1758284845}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0bb78484ce36c40398057942128cd670, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  offset: 0
-  offsetIncr: 0.0005
-  sortingLayer: Default
-  orderInLayer: -1
 --- !u!33 &1758284848
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -1591,6 +1581,23 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &1758284850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1758284845}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a807a126208e44a908faf952cf4adaf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  offset: 0
+  offsetIncr: 0.0008
+  sortingLayer: 
+  orderInLayer: 0
+  maxrot: 15
 --- !u!1 &1862595416
 GameObject:
   m_ObjectHideFlags: 0
@@ -1750,7 +1757,7 @@ GameObject:
   - component: {fileID: 1946384343}
   - component: {fileID: 1946384346}
   - component: {fileID: 1946384345}
-  - component: {fileID: 1946384344}
+  - component: {fileID: 1946384347}
   m_Layer: 0
   m_Name: casario 7
   m_TagString: 7
@@ -1773,22 +1780,6 @@ Transform:
   m_Father: {fileID: 1347632742}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1946384344
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1946384342}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0bb78484ce36c40398057942128cd670, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  offset: 0
-  offsetIncr: 0.0005
-  sortingLayer: Default
-  orderInLayer: -1
 --- !u!33 &1946384345
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -1839,6 +1830,23 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &1946384347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1946384342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a807a126208e44a908faf952cf4adaf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  offset: 0
+  offsetIncr: 0.0008
+  sortingLayer: 
+  orderInLayer: 0
+  maxrot: 15
 --- !u!1 &2056191146
 GameObject:
   m_ObjectHideFlags: 0

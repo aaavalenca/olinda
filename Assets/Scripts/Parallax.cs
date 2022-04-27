@@ -14,7 +14,8 @@ public class Parallax : MonoBehaviour
     
     public string sortingLayer;
     public int orderInLayer;
-    
+
+
     void Awake () {
         QualitySettings.vSyncCount = 0;  // VSync must be disabled
         Application.targetFrameRate = 60;
@@ -26,7 +27,6 @@ public class Parallax : MonoBehaviour
     {
         renderObj = GetComponent<MeshRenderer>();
 
-        
         // permite mudar a ordem da layer
         renderObj.sortingLayerName = sortingLayer;
         renderObj.sortingOrder = orderInLayer;
@@ -34,14 +34,16 @@ public class Parallax : MonoBehaviour
         objectMat = renderObj.material;
         
         gameController = (GameController)FindObjectOfType(typeof(GameController));
+
     }
 
     // Update is called once per frame
     void Update()
     {
+
         offsetSpeed = gameController.groundSpeed;
         offset += offsetIncr;
         objectMat.SetTextureOffset("_MainTex", new Vector2(offset * offsetSpeed, 0f));
-        
+
     }
 }

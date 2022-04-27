@@ -36,7 +36,7 @@ public class HouseHeight : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        offset = child0.GetComponent<Parallax>().offset;
+        offset = child0.GetComponent<RotationEffects>().offset;
 
         if (offset >= n[i])
         {
