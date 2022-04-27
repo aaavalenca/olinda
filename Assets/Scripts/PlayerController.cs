@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
     public float speed = 0f;
     public bool isGrounded = false;
     public float jumpForce = 950f;
-    public int life = 1000;
+    public int life = 100;
     
     private Animator anim;
     private Rigidbody2D rig;
@@ -81,7 +81,7 @@ public class PlayerController : MonoBehaviour
         if (collision.tag == "Crowd")
         {
             life = life - 1;
-            //Debug.Log(life.ToString());
+            Debug.Log(life.ToString());
         }
 
     }

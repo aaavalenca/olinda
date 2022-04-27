@@ -20,7 +20,7 @@ public class RotationEffects : MonoBehaviour
     private float tagNum = 0f;
     private float increaseTag = 0f;
     private float rot;
-    public float maxrot = 15;
+    public float maxrot = 30;
 
     void Awake()
     {
@@ -63,7 +63,7 @@ public class RotationEffects : MonoBehaviour
 
         offsetSpeed = gameController.groundSpeed;
         offset += offsetIncr;
-        objectMat.SetTextureOffset("_MainTex", new Vector2(offset * offsetSpeed, (rot / maxrot) * (-0.3f + (tagNum / 16))));
+        objectMat.SetTextureOffset("_MainTex", new Vector2(offset * offsetSpeed, (rot / maxrot) * (-0.35f + (tagNum / 16))));
 
         tagNum += increaseTag;
 

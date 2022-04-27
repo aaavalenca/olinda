@@ -390,6 +390,7 @@ GameObject:
   - component: {fileID: 1431862655606436393}
   - component: {fileID: 1431862655606436394}
   - component: {fileID: 1431862655606436395}
+  - component: {fileID: 8729521507899952773}
   m_Layer: 0
   m_Name: Banda
   m_TagString: Untagged
@@ -485,6 +486,28 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!68 &8729521507899952773
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1431862655606436404}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.72, y: -2.09}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -6.7449994, y: 0}
+  - {x: 6.7449994, y: 0}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0
 --- !u!1 &1431862655643089296
 GameObject:
   m_ObjectHideFlags: 0
@@ -513,7 +536,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1431862655643089296}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 31.2, y: -1.99, z: 0}
+  m_LocalPosition: {x: 31.2, y: 2.48, z: 0}
   m_LocalScale: {x: 0.8375, y: 0.8440625, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -589,7 +612,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1431862655643089296}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -1221,6 +1244,7 @@ GameObject:
   - component: {fileID: 7843710587281705408}
   - component: {fileID: 5516786673083702833}
   - component: {fileID: 2477371481480419131}
+  - component: {fileID: 2974389151203774875}
   m_Layer: 6
   m_Name: E1
   m_TagString: Untagged
@@ -1326,8 +1350,27 @@ CapsuleCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: -0, y: 2.37}
   m_Size: {x: 3.6, y: 0.05}
   m_Direction: 1
+--- !u!251 &2974389151203774875
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3907442425583847930}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 1
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 180
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 0
