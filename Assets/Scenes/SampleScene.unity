@@ -132,7 +132,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 74828670}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: CheckGround
   m_TagString: Untagged
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
@@ -1644,7 +1644,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   groundSpeed: 1
   timeObstacle: 8
-  prefabObstacle: {fileID: 1431862655643089296, guid: a8ea2341c9658402498555a8c52893a5, type: 3}
+  prefabObstacle: {fileID: 1431862655643089296, guid: b61553111da024312927c243969ab199, type: 3}
   speedObstacle: 2
 --- !u!1 &1908600726
 GameObject:
@@ -1861,7 +1861,7 @@ GameObject:
   - component: {fileID: 2056191151}
   - component: {fileID: 2056191150}
   - component: {fileID: 2056191152}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player_
   m_TagString: Player
   m_Icon: {fileID: 0}
