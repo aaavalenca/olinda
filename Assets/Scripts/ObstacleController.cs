@@ -29,6 +29,9 @@ public class ObstacleController : MonoBehaviour
 
     private void OnBecameInvisible()
     {
+        transform.position = new Vector3(31.2f, 2.48f, 0);
+
+        gameObject.transform.position = transform.position;
         gameObject.SetActive(false);
     }
 
