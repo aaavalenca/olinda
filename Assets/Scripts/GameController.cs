@@ -11,7 +11,7 @@ public class GameController : MonoBehaviour
     
     [Header("Configuração do Obstáculo")]
     public float timeObstacle;
-    public GameObject prefabObstacle;
+    public ObjectPool objectPool;
     public float speedObstacle = 2;
     
     void Awake () {
@@ -23,7 +23,7 @@ public class GameController : MonoBehaviour
     void Start()
     {
         // prefabObstacle = GetComponent<>()
-        StartCoroutine("SpawObstacle");
+        StartCoroutine("SpawnObstacle");
     }
     
 
@@ -38,15 +38,16 @@ public class GameController : MonoBehaviour
 
     }
 
-    IEnumerator SpawObstacle()
+    IEnumerator SpawnObstacle()
     {
         yield return new WaitForSeconds(timeObstacle);
 
-        GameObject TimeObstacleObj = Instantiate(prefabObstacle);
+        GameObject obstacle = objectPool.GetInstance();
+        obstacle.SetActive(true);
 
         speedObstacle += 0.25f;
 
-        StartCoroutine("SpawObstacle");
+        StartCoroutine("SpawnObstacle");
 
 
     }

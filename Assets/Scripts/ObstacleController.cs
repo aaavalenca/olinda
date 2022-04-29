@@ -29,7 +29,7 @@ public class ObstacleController : MonoBehaviour
 
     private void OnBecameInvisible()
     {
-        Destroy(this.gameObject);
+        gameObject.SetActive(false);
     }
 
 }
