@@ -7,11 +7,15 @@ public class PlayerController : MonoBehaviour
 {
     // Start is called before the first frame update
 
+    // better jump
     public float speed = 0f;
     public bool isGrounded = false;
-    public float jumpForce = 950f;
+    public float jumpForce = 600f;
     public int life = 100;
-    
+    public bool isHoldingJump = false;
+    private float jumpTimeCounter;
+    public float jumpTime;
+
     private Animator anim;
     private Rigidbody2D rig;
 
@@ -28,30 +32,48 @@ public class PlayerController : MonoBehaviour
     {
         rig = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
-
-        MovePlayer();
-
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (transform.position.x < -7)
         {
-            Jump();
+            transform.position = new Vector3(transform.position.x + 0.1f, transform.position.y, transform.position.z);
         }
 
-    }
+        if (isGrounded && Input.GetKeyDown(KeyCode.Space))
+        {
+            isHoldingJump = true;
+            jumpTimeCounter = jumpTime;
+            rig.velocity = Vector2.zero;
+            rig.AddForce(new Vector2(0, jumpForce));
+        }
 
-    private void MovePlayer()
-    {
-        transform.Translate(new Vector3(speed, 0, 0));
-
+        if (Input.GetKeyUp(KeyCode.Space))
+        {
+            isHoldingJump = false;
+        }
     }
 
     private void FixedUpdate()
     {
-        transform.Translate(new Vector3(speed, 0, 0));
+
+        if (isHoldingJump)
+        {
+            if (jumpTimeCounter > 0)
+            {
+                rig.velocity = Vector2.zero;
+                rig.AddForce(new Vector2(0, jumpForce));
+                jumpTimeCounter -= Time.deltaTime;
+            }
+            else
+            {
+                isHoldingJump = false;
+            }
+
+
+        }
 
         if (Physics2D.OverlapCircle(checkground.transform.position, 0.2f, LayerGround))
         {
@@ -63,17 +85,6 @@ public class PlayerController : MonoBehaviour
             anim.SetBool(isGroundBool, false);
             isGrounded = false;
         }
-    }
-
-    public void Jump()
-    {
-        if (isGrounded)
-        {
-            rig.velocity = Vector2.zero;
-            rig.AddForce(new Vector2(0, jumpForce));
-            
-        }
-
     }
     
     private void OnTriggerStay2D(Collider2D collision)

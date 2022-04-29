@@ -12,7 +12,7 @@ public class GameController : MonoBehaviour
     [Header("Configuração do Obstáculo")]
     public float timeObstacle;
     public GameObject prefabObstacle;
-    public float speedObstacle = 5;
+    public float speedObstacle = 2;
     
     void Awake () {
         QualitySettings.vSyncCount = 0;  // VSync must be disabled
@@ -44,7 +44,7 @@ public class GameController : MonoBehaviour
 
         GameObject TimeObstacleObj = Instantiate(prefabObstacle);
 
-        speedObstacle += 1;
+        speedObstacle += 0.25f;
 
         StartCoroutine("SpawObstacle");
 
