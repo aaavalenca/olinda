@@ -44,26 +44,26 @@ public class RotationEffects : MonoBehaviour
 
         ground = GameObject.FindGameObjectWithTag("RotatingGround");
 
-        Debug.Log(transform.tag);
-
         tagNum = float.Parse(transform.tag);
-        increaseTag = 1 / (0.125f / offsetIncr);
+        
 
     }
 
     // Update is called once per frame
     void Update()
     {
+        offsetSpeed = gameController.groundSpeed;
+        increaseTag = offsetSpeed / (0.125f / offsetIncr );
+        
         rot = ground.transform.rotation.eulerAngles.z;
 
         if (tagNum >= 8)
         {
             tagNum = 0f;
+            // tagNum = float.Parse(transform.tag);
         }
-
-        offsetSpeed = gameController.groundSpeed;
         offset += offsetIncr;
-        objectMat.SetTextureOffset("_MainTex", new Vector2(offset * offsetSpeed, (rot / maxrot) * (-0.35f + (tagNum / 16))));
+        objectMat.SetTextureOffset("_MainTex", new Vector2(offset * offsetSpeed, 0f));
 
         tagNum += increaseTag;
 

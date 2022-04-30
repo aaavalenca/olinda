@@ -8,9 +8,6 @@ public class RepeatGround : MonoBehaviour
 
     private GameController gameController;
 
-    public bool floorInst = false;
-    
-    
     void Awake () {
         QualitySettings.vSyncCount = 0;  // VSync must be disabled
         Application.targetFrameRate = 60;
@@ -23,29 +20,7 @@ public class RepeatGround : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        //if (!floorInst)
-        //{
-        //    if (transform.position.x <= -8)
-        //    {
-        //        // passou de uma determinada posição, cria um novo objeto do tipo groundPrefab
-        //        GameObject tempFloor = Instantiate(gameController.groundPrefab);
-        //        //SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
-        //        //spriteRenderer.size = new Vector2();
-        //        // dá para fazer as valas abertas somando valores ao x (podem ser aleatórios, ou em função da velocidade)
-        //        tempFloor.transform.position = new Vector3(transform.position.x + gameController.groundSize * transform.localScale.x, transform.position.y, 0);
-        //        floorInst = true;
-        //    }
-        //}
-
-        //if (transform.position.x < gameController.groundDestroyed)
-        //{
-        //    Destroy(this.gameObject);
-        //}
-
-    }
-
+  
     private void FixedUpdate()
     {
         MoveGround();

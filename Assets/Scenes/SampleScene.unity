@@ -279,7 +279,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 208731317}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0.08663411, w: 0.99624026}
   m_LocalPosition: {x: -6.3, y: -3.42, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -287,7 +287,7 @@ Transform:
   - {fileID: 1087033942}
   m_Father: {fileID: 0}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 9.94}
 --- !u!61 &208731319
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -301,7 +301,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 10.776236, y: -0.5001643}
+  m_Offset: {x: 26.7, y: -0.5001643}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -312,7 +312,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 73.77597, y: 0.5012641}
+  m_Size: {x: 88.58, y: 0.5012641}
   m_EdgeRadius: 0
 --- !u!1 &519420028
 GameObject:
@@ -1006,6 +1006,52 @@ MonoBehaviour:
   sortingLayer: 
   orderInLayer: 0
   maxrot: 15
+--- !u!1 &1143824333
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1143824335}
+  - component: {fileID: 1143824334}
+  m_Layer: 0
+  m_Name: PoolManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1143824334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1143824333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80d65441657b4aebaf61b5e3d44cb482, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 1431862655643089296, guid: 4fa7f0ed9d1ac401ebc8620af9b98d75, type: 3}
+  amount: 5
+--- !u!4 &1143824335
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1143824333}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.0882854, y: -2.1262543, z: 0.33396628}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1347632741
 GameObject:
   m_ObjectHideFlags: 0
@@ -1543,7 +1589,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   groundSpeed: 1
   timeObstacle: 8
-  prefabObstacle: {fileID: 1431862655643089296, guid: a8ea2341c9658402498555a8c52893a5, type: 3}
+  objectPool: {fileID: 1143824334}
   speedObstacle: 2
 --- !u!1 &1908600726
 GameObject:

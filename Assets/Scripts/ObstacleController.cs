@@ -17,6 +17,19 @@ public class ObstacleController : MonoBehaviour
         gameController = FindObjectOfType<GameController>();
     }
 
+    private void Update()
+    {
+        Vector3 xPos = transform.position;
+        if (xPos.x < -24)
+        {
+            transform.position = new Vector3(31.2f, 2.48f, 0);
+
+            gameObject.transform.position = xPos;
+            gameObject.SetActive(false);
+            
+        }
+    }
+
     private void FixedUpdate()
     {
         MoveObject();
@@ -25,14 +38,6 @@ public class ObstacleController : MonoBehaviour
     void MoveObject()
     {
         transform.Translate(Vector2.left * gameController.speedObstacle * Time.smoothDeltaTime);
-    }
-
-    private void OnBecameInvisible()
-    {
-        transform.position = new Vector3(31.2f, 2.48f, 0);
-
-        gameObject.transform.position = transform.position;
-        gameObject.SetActive(false);
     }
 
 }
