@@ -4,22 +4,24 @@ using UnityEngine;
 
 public class ObjectPool : MonoBehaviour
 {
-    public GameObject prefab;
-    public int amount = 5;
-
     private List<GameObject> instances;
+    private GameObject[] prefabs;
     private int lastInstanceIndex = 0;
 
     void Awake()
     {
+        
         instances = new List<GameObject>();
-        for (int i = 0; i < amount; i++)
-        {
-            var instance = Instantiate(prefab);
-            instance.SetActive(false);
-            instances.Add(instance);
-        }
 
+        prefabs = Resources.LoadAll<GameObject>("Prefabs");
+
+        foreach(GameObject i in prefabs)
+        {
+            var inst = Instantiate(i);
+            inst.SetActive(false);
+            instances.Add(inst);
+            Debug.Log(inst.name);
+        }
     }
 
     public GameObject GetInstance()
