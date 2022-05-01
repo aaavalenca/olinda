@@ -34,7 +34,7 @@ public class GameController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        groundSpeed += 0.01f;
+        groundSpeed += 0.00001f;
 
     }
 

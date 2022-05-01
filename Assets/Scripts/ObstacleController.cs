@@ -22,9 +22,8 @@ public class ObstacleController : MonoBehaviour
         Vector3 xPos = transform.position;
         if (xPos.x < -24)
         {
-            transform.position = new Vector3(31.2f, 2.48f, 0);
 
-            gameObject.transform.position = xPos;
+            gameObject.transform.position = new Vector3(50f, 25f, 0); ;
             gameObject.SetActive(false);
             
         }
