@@ -1643,7 +1643,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   groundSpeed: 1
-  timeObstacle: 2
+  timeObstacle: 8
   objectPool: {fileID: 2109286744}
   speedObstacle: 2
 --- !u!1 &1908600726

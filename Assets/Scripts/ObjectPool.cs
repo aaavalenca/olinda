@@ -20,7 +20,6 @@ public class ObjectPool : MonoBehaviour
             var inst = Instantiate(i);
             inst.SetActive(false);
             instances.Add(inst);
-            Debug.Log(inst.name);
         }
     }
 
