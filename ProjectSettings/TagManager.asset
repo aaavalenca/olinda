@@ -15,6 +15,10 @@ TagManager:
   - 7
   - RotatingGround
   - ToPool
+  - Undefined
+  - Agua
+  - Axe
+  - Boi
   layers:
   - Default
   - TransparentFX

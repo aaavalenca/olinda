@@ -435,7 +435,7 @@ GameObject:
   - component: {fileID: 7067504490284690092}
   m_Layer: 7
   m_Name: Bloco 4
-  m_TagString: ToPool
+  m_TagString: 4
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -575,7 +575,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 28.51, y: 3.04}
+  m_Size: {x: 29, y: 3.04}
   m_EdgeRadius: 0
 --- !u!1 &1431862655708229037
 GameObject:

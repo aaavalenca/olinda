@@ -435,7 +435,7 @@ GameObject:
   - component: {fileID: 7067504490284690092}
   m_Layer: 7
   m_Name: Bloco 4
-  m_TagString: ToPool
+  m_TagString: Crowd
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -89,12 +89,24 @@ public class PlayerController : MonoBehaviour
     
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.tag == "Crowd")
+        if (collision.CompareTag("1") || collision.CompareTag("2") || collision.CompareTag("3") || collision.CompareTag("4"))
         {
             life = life - 1;
             Debug.Log(life.ToString());
         }
 
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Agua"))
+        {
+            life = life + 15;
+            Debug.Log(life);
+        }
+        else if (collision.CompareTag("Axe")) {
+            Debug.Log("Protected!");
+        }
     }
 
 }

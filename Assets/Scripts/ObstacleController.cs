@@ -6,6 +6,8 @@ using UnityEngine;
 public class ObstacleController : MonoBehaviour
 {
     private GameController gameController;
+    private ObjectPool op;
+
 
     void Awake () {
         QualitySettings.vSyncCount = 0;
@@ -15,6 +17,7 @@ public class ObstacleController : MonoBehaviour
     void Start()
     {
         gameController = FindObjectOfType<GameController>();
+        op = FindObjectOfType<ObjectPool>();
     }
 
     private void Update()
@@ -23,9 +26,23 @@ public class ObstacleController : MonoBehaviour
         if (xPos.x < -24)
         {
 
-            gameObject.transform.position = new Vector3(50f, 25f, 0); ;
+
+            if (gameObject.CompareTag("Agua") || gameObject.CompareTag("Axe"))
+            {
+                gameObject.transform.position = new Vector3(50f, 3.5f, 0);
+
+            }
+            else if (gameObject.CompareTag("Boi"))
+            {
+                gameObject.transform.position = new Vector3(50f, -2f, 0);
+
+            }
+            else {
+                gameObject.transform.position = new Vector3(50f, 25f, 0);
+            }
+
             gameObject.SetActive(false);
-            
+            op.ReturnInstance();
         }
     }
 
