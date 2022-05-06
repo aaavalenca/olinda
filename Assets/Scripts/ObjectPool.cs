@@ -5,7 +5,7 @@ using Random = UnityEngine.Random;
 
 public class ObjectPool : MonoBehaviour
 {
-    public static Dictionary<string, Queue<GameObject>> Pool1 = new Dictionary<string, Queue<GameObject>>();
+    public static Dictionary<string, Queue<GameObject>> Pool1;
     private GameObject[] prefabs;
     //private readonly string[] keys = { "Agua", "Axe", "1", "2", "3", "4", "Boi" };
     private List<string> keys = new List<string>();
@@ -18,6 +18,7 @@ public class ObjectPool : MonoBehaviour
 
     void Awake()
     {
+        Pool1 = new Dictionary<string, Queue<GameObject>>();
         QualitySettings.vSyncCount = 0;
         Application.targetFrameRate = 60;
 

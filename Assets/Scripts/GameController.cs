@@ -13,7 +13,11 @@ public class GameController : MonoBehaviour
     public float timeObstacle;
     public ObjectPool objectPool;
     public float speedObstacle = 2;
-    
+
+
+    [Header("Game Over Screen")]
+    public GameOver gameOver;
+
     void Awake () {
         QualitySettings.vSyncCount = 0;  // VSync must be disabled
         Application.targetFrameRate = 60;
@@ -50,6 +54,11 @@ public class GameController : MonoBehaviour
         StartCoroutine("SpawnObstacle");
 
 
+    }
+
+    public void GameOver()
+    {
+        gameOver.EndGame();
     }
     
 }

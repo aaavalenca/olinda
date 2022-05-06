@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -15,6 +16,9 @@ public class PlayerController : MonoBehaviour
     public bool isHoldingJump = false;
     private float jumpTimeCounter;
     public float jumpTime;
+
+    public GameController gameController;
+    [SerializeField] GameOver gameOver;
 
     private Animator anim;
     private Rigidbody2D rig;
@@ -89,16 +93,23 @@ public class PlayerController : MonoBehaviour
     
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.CompareTag("1") || collision.CompareTag("2") || collision.CompareTag("3") || collision.CompareTag("4"))
+        
+        if (collision.CompareTag("Crowd"))
         {
+
             life = life - 1;
             Debug.Log(life.ToString());
+            if (life < 0)
+            {
+                gameController.GameOver();
+            }
         }
 
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        
         if (collision.CompareTag("Agua"))
         {
             life = life + 15;
