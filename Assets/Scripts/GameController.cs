@@ -26,7 +26,6 @@ public class GameController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // prefabObstacle = GetComponent<>()
         StartCoroutine("SpawnObstacle");
     }
     
@@ -39,7 +38,7 @@ public class GameController : MonoBehaviour
     private void FixedUpdate()
     {
         groundSpeed += 0.0001f;
-
+        timeObstacle -= 0.00001f;
     }
 
     IEnumerator SpawnObstacle()

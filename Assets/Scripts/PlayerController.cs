@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
     public float speed = 0f;
     public bool isGrounded = false;
     public float jumpForce = 600f;
-    public int life = 100;
+    public int life = 1000;
     public bool isHoldingJump = false;
     private float jumpTimeCounter;
     public float jumpTime;
@@ -79,7 +79,7 @@ public class PlayerController : MonoBehaviour
 
         }
 
-        if (Physics2D.OverlapCircle(checkground.transform.position, 0.2f, LayerGround))
+        if (Physics2D.OverlapCircle(checkground.transform.position, 0.3f, LayerGround))
         {
             anim.SetBool(isGroundBool, true);
             isGrounded = true;
@@ -117,6 +117,9 @@ public class PlayerController : MonoBehaviour
         }
         else if (collision.CompareTag("Axe")) {
             Debug.Log("Protected!");
+        } else if (collision.CompareTag("Boi"))
+        {
+            gameController.GameOver();
         }
     }
 

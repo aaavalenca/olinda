@@ -7,7 +7,7 @@ public class ObstacleController : MonoBehaviour
 {
     private GameController gameController;
     private ObjectPool op;
-
+    private bool isGrounded = false;
 
     void Awake () {
         QualitySettings.vSyncCount = 0;
@@ -43,12 +43,24 @@ public class ObstacleController : MonoBehaviour
 
             gameObject.SetActive(false);
             op.ReturnInstance();
+            isGrounded = false;
         }
     }
 
     private void FixedUpdate()
     {
-        MoveObject();
+        
+        if (gameObject.CompareTag("Agua") || gameObject.CompareTag("Axe") || gameObject.CompareTag("Boi"))
+        {
+            MoveObject();
+        }
+        else {
+            if (isGrounded)
+            {
+                MoveObject();
+            }
+            
+        }
     }
 
     void MoveObject()
@@ -56,4 +68,19 @@ public class ObstacleController : MonoBehaviour
         transform.Translate(Vector2.left * gameController.speedObstacle * Time.smoothDeltaTime);
     }
 
+    private void OnCollisionEnter2D(Collision2D col)
+    {
+
+        isGrounded = true;
+    }
+
+    private void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.CompareTag("Player") && (this.CompareTag("Agua") || this.CompareTag("Axe")))
+        {
+            gameObject.transform.position = new Vector3(50f, 3.5f, 0);
+            gameObject.SetActive(false);
+            op.ReturnInstance();
+        }
+    }
 }

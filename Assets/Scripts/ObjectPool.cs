@@ -8,16 +8,23 @@ public class ObjectPool : MonoBehaviour
     public static Dictionary<string, Queue<GameObject>> Pool1;
     private GameObject[] prefabs;
     //private readonly string[] keys = { "Agua", "Axe", "1", "2", "3", "4", "Boi" };
-    private List<string> keys = new List<string>();
+    private List<string> keys;
 
-    private int[] pn = { 0, 0, 1, 2, 2, 2, 3, 3, 3, 4, 4, 4, 5, 5, 5, 6, 6 };
+    private int[] pn = { 0, 0, 1, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 6, 6 };
 
-    private int index;
+    private Queue<GameObject> iQueue;
+    private Queue<int> index;
     private GameObject instance;
+    private GameObject retInstance;
+
     private int rn;
 
     void Awake()
     {
+
+        keys = new List<string>();
+        iQueue = new Queue<GameObject>();
+        index = new Queue<int>();
         Pool1 = new Dictionary<string, Queue<GameObject>>();
         QualitySettings.vSyncCount = 0;
         Application.targetFrameRate = 60;
@@ -31,7 +38,7 @@ public class ObjectPool : MonoBehaviour
             var inst = Instantiate(i);
             var inst2 = Instantiate(i);
             var inst3 = Instantiate(i);
-
+            
             inst.SetActive(false);
             inst2.SetActive(false);
             inst3.SetActive(false);
@@ -41,25 +48,29 @@ public class ObjectPool : MonoBehaviour
             queue.Enqueue(inst3);
 
             keys.Add(i.tag);
-
+            
             Pool1.Add(i.tag, queue);
 
         }
 
+        
+        
     }
 
     public GameObject GetInstance()
     {
 
-        rn = pn[Random.Range(0, keys.Count)];
-        index = rn;
-        instance = Pool1[keys[index]].Dequeue();
-        //index = (index + 1) % 7;
+        int random = Random.Range(0, pn.Length);
+        rn = pn[random];
+        instance = Pool1[keys[rn]].Dequeue();
+        iQueue.Enqueue(instance);
+        index.Enqueue(rn);
         return instance;
     }
 
     public void ReturnInstance() {
-        Pool1[keys[index]].Enqueue(instance);
+        retInstance = iQueue.Dequeue();
+        Pool1[keys[index.Dequeue()]].Enqueue(instance);
     }
 
     
