@@ -17,7 +17,7 @@ public class GameController : MonoBehaviour
 
     [Header("Game Over Screen")]
     public GameOver gameOver;
-
+    
     void Awake () {
         QualitySettings.vSyncCount = 0;  // VSync must be disabled
         Application.targetFrameRate = 60;

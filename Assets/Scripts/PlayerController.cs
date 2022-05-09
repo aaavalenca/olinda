@@ -13,7 +13,9 @@ public class PlayerController : MonoBehaviour
     public bool isGrounded = false;
     public float jumpForce = 600f;
     public int life = 550;
+    public int originalLife;
     private float drainage;
+    public float originalDrainPos;
     public bool isHoldingJump = false;
     private float jumpTimeCounter;
     public float jumpTime;
@@ -29,6 +31,8 @@ public class PlayerController : MonoBehaviour
     public string isGroundBool = "isGround";
 
     public Transform drain;
+
+    public SpriteRenderer redScreen;
     
     void Awake () {
         QualitySettings.vSyncCount = 0;  // VSync must be disabled
@@ -40,6 +44,8 @@ public class PlayerController : MonoBehaviour
         rig = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         drainage = 5.5f / life;
+        originalLife = life;
+        originalDrainPos = drain.position.x;
     }
 
     // Update is called once per frame
@@ -102,7 +108,7 @@ public class PlayerController : MonoBehaviour
         
         if (collision.CompareTag("Crowd"))
         {
-
+            
             life -= 1;
             Vector3 pos = drain.position;
             drain.position = new Vector3(pos.x - drainage, pos.y, pos.z);
@@ -117,19 +123,47 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+
+        // fr.StartFlash();
         
         if (collision.CompareTag("Agua"))
         {
-            life += 15;
             Vector3 pos = drain.position;
-            drain.position = new Vector3(pos.x + drainage * 15, pos.y, pos.z);
+
+            if (life > originalLife - 30)
+            {
+                life = originalLife;
+                drain.position = new Vector3(originalDrainPos, pos.y, pos.z);
+            }
+            else
+            {
+                life += 30;
+                drain.position = new Vector3(pos.x + drainage * 30, pos.y, pos.z);
+            }
+
+          
         }
         else if (collision.CompareTag("Axe")) {
             Debug.Log("Protected!");
         } else if (collision.CompareTag("Boi"))
         {
             gameController.GameOver();
+        } else if (collision.CompareTag("Crowd"))
+        {
+            Color tmp = Color.red;
+            tmp.a = 0.2f;
+            redScreen.color = tmp;
         }
     }
 
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("Crowd"))
+        {
+            Color tmp = Color.red;
+            tmp.a = 0f;
+            redScreen.color = tmp;
+        }
+    }
 }
