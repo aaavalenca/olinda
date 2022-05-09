@@ -37,8 +37,15 @@ public class GameController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        
         groundSpeed += 0.0001f;
-        timeObstacle -= 0.00001f;
+        
+        if (timeObstacle > 1)
+        {
+            timeObstacle -= 0.0001f;
+        }
+
+        
     }
 
     IEnumerator SpawnObstacle()
@@ -48,7 +55,10 @@ public class GameController : MonoBehaviour
         GameObject obstacle = objectPool.GetInstance();
         obstacle.SetActive(true);
 
-        speedObstacle += 0.25f;
+        if (speedObstacle < 15)
+        {
+            speedObstacle += 0.25f;
+        }
 
         StartCoroutine("SpawnObstacle");
 

@@ -12,7 +12,8 @@ public class PlayerController : MonoBehaviour
     public float speed = 0f;
     public bool isGrounded = false;
     public float jumpForce = 600f;
-    public int life = 1000;
+    public int life = 550;
+    private float drainage;
     public bool isHoldingJump = false;
     private float jumpTimeCounter;
     public float jumpTime;
@@ -26,6 +27,8 @@ public class PlayerController : MonoBehaviour
     public LayerMask LayerGround;
     public Transform checkground;
     public string isGroundBool = "isGround";
+
+    public Transform drain;
     
     void Awake () {
         QualitySettings.vSyncCount = 0;  // VSync must be disabled
@@ -36,14 +39,17 @@ public class PlayerController : MonoBehaviour
     {
         rig = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        drainage = 5.5f / life;
     }
 
     // Update is called once per frame
     void Update()
     {
+        Vector3 pos = transform.position;
+        
         if (transform.position.x < -7)
         {
-            transform.position = new Vector3(transform.position.x + 0.1f, transform.position.y, transform.position.z);
+            transform.position = new Vector3(pos.x + 0.1f, pos.y, pos.z);
         }
 
         if (isGrounded && Input.GetKeyDown(KeyCode.Space))
@@ -97,8 +103,10 @@ public class PlayerController : MonoBehaviour
         if (collision.CompareTag("Crowd"))
         {
 
-            life = life - 1;
-            Debug.Log(life.ToString());
+            life -= 1;
+            Vector3 pos = drain.position;
+            drain.position = new Vector3(pos.x - drainage, pos.y, pos.z);
+            
             if (life < 0)
             {
                 gameController.GameOver();
@@ -112,8 +120,9 @@ public class PlayerController : MonoBehaviour
         
         if (collision.CompareTag("Agua"))
         {
-            life = life + 15;
-            Debug.Log(life);
+            life += 15;
+            Vector3 pos = drain.position;
+            drain.position = new Vector3(pos.x + drainage * 15, pos.y, pos.z);
         }
         else if (collision.CompareTag("Axe")) {
             Debug.Log("Protected!");

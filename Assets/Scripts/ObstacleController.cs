@@ -38,7 +38,7 @@ public class ObstacleController : MonoBehaviour
 
             }
             else {
-                gameObject.transform.position = new Vector3(50f, 25f, 0);
+                gameObject.transform.position = new Vector3(50f, 16f, 0);
             }
 
             gameObject.SetActive(false);
