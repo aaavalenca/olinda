@@ -73,6 +73,4 @@ public class ObjectPool : MonoBehaviour
         Pool1[keys[index.Dequeue()]].Enqueue(instance);
     }
 
-    
-
 }
