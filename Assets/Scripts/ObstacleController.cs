@@ -32,11 +32,6 @@ public class ObstacleController : MonoBehaviour
                 gameObject.transform.position = new Vector3(50f, 3.5f, 0);
 
             }
-            else if (gameObject.CompareTag("Boi"))
-            {
-                gameObject.transform.position = new Vector3(50f, -2f, 0);
-
-            }
             else {
                 gameObject.transform.position = new Vector3(50f, 16f, 0);
             }
@@ -50,7 +45,7 @@ public class ObstacleController : MonoBehaviour
     private void FixedUpdate()
     {
         
-        if (gameObject.CompareTag("Agua") || gameObject.CompareTag("Axe") || gameObject.CompareTag("Boi"))
+        if (gameObject.CompareTag("Agua") || gameObject.CompareTag("Axe"))
         {
             MoveObject();
         }

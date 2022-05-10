@@ -12,8 +12,8 @@ public class PlayerController : MonoBehaviour
     public float speed = 0f;
     public bool isGrounded = false;
     public float jumpForce = 600f;
-    public int life = 550;
-    public int originalLife;
+    public float life = 550f;
+    public float originalLife;
     private float drainage;
     public float originalDrainPos;
     public bool isHoldingJump = false;
@@ -37,6 +37,11 @@ public class PlayerController : MonoBehaviour
     
     
     public SpriteRenderer redScreen;
+    private GameObject ground;
+    private GroundRotation groundRotation;
+    private bool up;
+    private bool isFlashRedStarted = false;
+    
     
     void Awake () {
         QualitySettings.vSyncCount = 0;  // VSync must be disabled
@@ -51,13 +56,38 @@ public class PlayerController : MonoBehaviour
         originalLife = life;
         originalDrainPos = drain.position.x;
         axeMat = GetComponent<SpriteRenderer>().material;
+        ground = GameObject.FindGameObjectWithTag("RotatingGround");
+        groundRotation = ground.GetComponent<GroundRotation>();
     }
 
     // Update is called once per frame
     void Update()
     {
         Vector3 pos = transform.position;
+        if (axeMat.color == Color.white)
+        {
+            Color tmp = Color.clear;
+            tmp.a = 0f;
+            redScreen.color = tmp;
+        }
+
         
+        // Damage from rotation
+        if (groundRotation.up)
+        {
+            life -= 0.1f;
+            Vector3 pos2 = drain.position;
+            drain.position = new Vector3(pos2.x - (drainage)/10, pos2.y, pos2.z);
+            if (!isFlashRedStarted)
+            {
+                StartCoroutine("FlashRed");
+            }
+        }
+        else
+        {
+            isFlashRedStarted = false;
+        }
+
         if (transform.position.x < -7)
         {
             transform.position = new Vector3(pos.x + 0.1f, pos.y, pos.z);
@@ -92,8 +122,6 @@ public class PlayerController : MonoBehaviour
             {
                 isHoldingJump = false;
             }
-
-
         }
 
         if (Physics2D.OverlapCircle(checkground.transform.position, 0.3f, LayerGround))
@@ -169,23 +197,55 @@ public class PlayerController : MonoBehaviour
             gameController.GameOver();
         } else if (collision.CompareTag("Crowd") && !axeProtects)
         {
-            Color tmp = Color.red;
-            tmp.a = 0.2f;
-            redScreen.color = tmp;
             axeMat.color = Color.red;
+            StartCoroutine(FadeInRed());
         }
     }
 
+    IEnumerator FadeInRed()
+    {
+        Color tmp = Color.red;
+        for (float r = 0f; r <= 0.3f; r += 0.05f)
+        {
+            tmp.a = r;
+            redScreen.color = tmp;
+            yield return null;
+        }
+    }
+    
+    IEnumerator FadeOutRed()
+    {
+        Color tmp = Color.red;
+        for (float r = 0.3f; r >= 0f; r -= 0.05f)
+        {
+            tmp.a = r;
+            redScreen.color = tmp;
+            yield return null;
+        }
+    }
+    
+    IEnumerator FlashRed()
+    {
+        isFlashRedStarted = true;
+        yield return new WaitForSeconds(1f);
+        StartCoroutine("FadeInRed");
+        yield return new WaitForSeconds(0.8f);
+        StartCoroutine("FadeOutRed");
+        yield return new WaitForSeconds(1f);
+
+        if (isFlashRedStarted)
+        {
+            StartCoroutine("FlashRed");
+        }
+    }
+    
+    
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.CompareTag("Crowd"))
-        {
-            Color tmp = Color.red;
+            Color tmp = Color.clear;
             tmp.a = 0f;
             redScreen.color = tmp;
             axeMat.color = Color.white;
-
-        }
     }
 }
