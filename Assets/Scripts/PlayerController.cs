@@ -31,7 +31,11 @@ public class PlayerController : MonoBehaviour
     public string isGroundBool = "isGround";
 
     public Transform drain;
-
+    private bool axeProtects = false;
+    private float timeLeft = 10f;
+    private Material axeMat;
+    
+    
     public SpriteRenderer redScreen;
     
     void Awake () {
@@ -46,6 +50,7 @@ public class PlayerController : MonoBehaviour
         drainage = 5.5f / life;
         originalLife = life;
         originalDrainPos = drain.position.x;
+        axeMat = GetComponent<SpriteRenderer>().material;
     }
 
     // Update is called once per frame
@@ -101,12 +106,24 @@ public class PlayerController : MonoBehaviour
             anim.SetBool(isGroundBool, false);
             isGrounded = false;
         }
+
+        if (axeProtects)
+        {
+            timeLeft -= Time.deltaTime;
+            if (timeLeft < 0)
+            { 
+                axeProtects = false;
+                timeLeft = 7f;
+                axeMat.color = Color.white;
+            }
+        }
     }
+
     
     private void OnTriggerStay2D(Collider2D collision)
     {
         
-        if (collision.CompareTag("Crowd"))
+        if (collision.CompareTag("Crowd") && !axeProtects)
         {
             
             life -= 1;
@@ -143,16 +160,19 @@ public class PlayerController : MonoBehaviour
 
           
         }
-        else if (collision.CompareTag("Axe")) {
-            Debug.Log("Protected!");
+        else if (collision.CompareTag("Axe"))
+        {
+            axeMat.color = Color.green;
+            axeProtects = true;
         } else if (collision.CompareTag("Boi"))
         {
             gameController.GameOver();
-        } else if (collision.CompareTag("Crowd"))
+        } else if (collision.CompareTag("Crowd") && !axeProtects)
         {
             Color tmp = Color.red;
             tmp.a = 0.2f;
             redScreen.color = tmp;
+            axeMat.color = Color.red;
         }
     }
 
@@ -164,6 +184,8 @@ public class PlayerController : MonoBehaviour
             Color tmp = Color.red;
             tmp.a = 0f;
             redScreen.color = tmp;
+            axeMat.color = Color.white;
+
         }
     }
 }
