@@ -27,10 +27,10 @@ public class ObstacleController : MonoBehaviour
         {
             if (gameObject.CompareTag("Agua") || gameObject.CompareTag("Axe"))
             {
-                gameObject.transform.position = new Vector3(23f, 3.5f, 0);
+                gameObject.transform.position = new Vector3(27f, 3.5f, 0);
             }
             else {
-                gameObject.transform.position = new Vector3(23f, 11f, 0);
+                gameObject.transform.position = new Vector3(27f, 11f, 0);
             }
             gameObject.SetActive(false);
             isGrounded = false;

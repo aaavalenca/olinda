@@ -2023,7 +2023,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3529776733317590520, guid: 058093b38ade842dca2be5b9035f84b9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 13.5
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 3529776733317590520, guid: 058093b38ade842dca2be5b9035f84b9, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2340,10 +2340,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfb721c0ef3414cea8683efde8b9e3e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  groundSpeed: 3
-  timeObstacle: 6
+  groundSpeed: 2.5
   objectPool: {fileID: 2109286744}
-  speedObstacle: 3
+  timeObstacle: 7.5
+  timeDecrement: 0.0005
+  speedObstacleIncrement: 0.15
+  speedObstacle: 3.5
   gameOver: {fileID: 1818459345}
 --- !u!1 &1908600726
 GameObject:
@@ -2656,6 +2658,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5836294191417832904, guid: aab9085affc1840d09defdb3634d0b17, type: 3}
+      propertyPath: m_Constraints
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 5836294191417832906, guid: aab9085affc1840d09defdb3634d0b17, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -2666,7 +2672,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5836294191417832906, guid: aab9085affc1840d09defdb3634d0b17, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.7
+      value: 15.8
       objectReference: {fileID: 0}
     - target: {fileID: 5836294191417832906, guid: aab9085affc1840d09defdb3634d0b17, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2718,7 +2724,7 @@ PrefabInstance:
       objectReference: {fileID: 208731320}
     - target: {fileID: 5836294191417832919, guid: aab9085affc1840d09defdb3634d0b17, type: 3}
       propertyPath: life
-      value: 550
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 5836294191417832919, guid: aab9085affc1840d09defdb3634d0b17, type: 3}
       propertyPath: drain

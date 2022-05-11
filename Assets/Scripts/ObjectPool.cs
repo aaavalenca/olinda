@@ -8,9 +8,17 @@ public class ObjectPool : MonoBehaviour
 {
     public static Dictionary<string, Queue<GameObject>> Pool1;
     private GameObject[] prefabs;
+
     private List<string> keys;
+
     // 0 - "Agua"; 1- "Axe"; 2 - "Bloco 1"; 3 - "Bloco 2"; 4 - "Bloco 3"; 5 - "Bloco 4"; 6 - "Boi";
-    private int[] pn = { 0, 0, 1, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 6, 6 };
+    private int[] pn1 = {4, 5};
+    private int[] pn2 = {0};
+    private int[] pn3 = {0, 2, 3, 4, 5};
+    private int[] pn4 = {0, 0, 1, 2, 2, 2, 3, 4, 4, 5, 6};
+    private int[] pn5 = {0, 0, 1, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 6, 6};
+
+    private List<int[]> pn;
 
     // private Queue<GameObject> iQueue;
     // private Queue<int> index;
@@ -23,11 +31,18 @@ public class ObjectPool : MonoBehaviour
     private GameObject retInstance;
 
     private int rn;
-    private int bull = 0;
+    private int bull;
+    private int purva;
 
     void Awake()
     {
-
+        pn = new List<int[]>();
+        pn.Add(pn1);
+        pn.Add(pn2);
+        pn.Add(pn3);
+        pn.Add(pn4);
+        pn.Add(pn5);
+        
         keys = new List<string>();
         // iQueue = new Queue<GameObject>();
         // index = new Queue<int>();
@@ -72,11 +87,34 @@ public class ObjectPool : MonoBehaviour
  
     }
 
+    private int GetLevel()
+    {
+
+        
+        
+        return 0;
+    }
+
     public GameObject GetInstance()
     {
-        int random = Random.Range(0, pn.Length);
-        rn = pn[random];
         
+        if (Time.time < 60f)
+        {
+            purva = 0;
+        } else if (Time.time >= 60 && Time.time < 66)
+        {
+            purva = 1;
+        } else if (Time.time >= 66 && Time.time < 120)
+        {
+            purva = 2;
+        }
+        else
+        {
+            purva = 3;
+        }
+        
+        int random = Random.Range(0, pn[purva].Length);
+        rn = pn[purva][random];
         
         if (random == 6 && bull < 13)
         {

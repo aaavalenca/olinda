@@ -10,9 +10,11 @@ public class GameController : MonoBehaviour
     public float groundSpeed = 1;
     
     [Header("Configuração do Obstáculo")]
-    public float timeObstacle;
     public ObjectPool objectPool;
-    public float speedObstacle = 2;
+    public float timeObstacle;
+    public float timeDecrement = 0.0005f;
+    public float speedObstacleIncrement = 0.15f;
+    public float speedObstacle = 3;
 
 
     [Header("Game Over Screen")]
@@ -31,9 +33,9 @@ public class GameController : MonoBehaviour
     private void FixedUpdate()
     {
         groundSpeed += 0.0001f;
-        if (timeObstacle > 1f)
+        if (timeObstacle > 1.1f)
         {
-            timeObstacle -= 0.00025f;
+            timeObstacle -= timeDecrement;
         }
     }
 
@@ -46,7 +48,7 @@ public class GameController : MonoBehaviour
 
         if (speedObstacle < 15)
         {
-            speedObstacle += 0.2f;
+            speedObstacle += speedObstacleIncrement;
         }
         StartCoroutine("SpawnObstacle");
     }

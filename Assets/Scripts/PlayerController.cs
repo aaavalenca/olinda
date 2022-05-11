@@ -76,7 +76,7 @@ public class PlayerController : MonoBehaviour
 
         
         // Damage from rotation
-        if (groundRotation.up)
+        if (groundRotation.up && !axeProtects)
         {
             life -= 0.1f;
             Vector3 pos2 = drain.position;
@@ -89,11 +89,6 @@ public class PlayerController : MonoBehaviour
         else
         {
             isFlashRedStarted = false;
-        }
-
-        if (transform.position.x < -7)
-        {
-            transform.position = new Vector3(pos.x + 0.1f, pos.y, pos.z);
         }
 
         if (isGrounded && Input.GetKeyDown(KeyCode.Space))
@@ -203,7 +198,6 @@ public class PlayerController : MonoBehaviour
             gameController.GameOver();
         } else if (collision.CompareTag("Crowd") && !axeProtects)
         {
-            axeMat.color = Color.red;
             StartCoroutine("FadeInRed");
         }
     }
@@ -252,6 +246,5 @@ public class PlayerController : MonoBehaviour
             Color tmp = Color.clear;
             tmp.a = 0f;
             redScreen.color = tmp;
-            axeMat.color = Color.white;
     }
 }
