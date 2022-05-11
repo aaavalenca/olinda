@@ -204,7 +204,7 @@ public class PlayerController : MonoBehaviour
         } else if (collision.CompareTag("Crowd") && !axeProtects)
         {
             axeMat.color = Color.red;
-            StartCoroutine(FadeInRed());
+            StartCoroutine("FadeInRed");
         }
     }
 
