@@ -25,19 +25,14 @@ public class ObstacleController : MonoBehaviour
         Vector3 xPos = transform.position;
         if (xPos.x < -24)
         {
-
-
             if (gameObject.CompareTag("Agua") || gameObject.CompareTag("Axe"))
             {
-                gameObject.transform.position = new Vector3(50f, 3.5f, 0);
-
+                gameObject.transform.position = new Vector3(23f, 3.5f, 0);
             }
             else {
-                gameObject.transform.position = new Vector3(50f, 16f, 0);
+                gameObject.transform.position = new Vector3(23f, 11f, 0);
             }
-
             gameObject.SetActive(false);
-            op.ReturnInstance();
             isGrounded = false;
         }
     }
@@ -54,7 +49,6 @@ public class ObstacleController : MonoBehaviour
             {
                 MoveObject();
             }
-            
         }
     }
 
@@ -65,7 +59,6 @@ public class ObstacleController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D col)
     {
-
         isGrounded = true;
     }
 
@@ -75,7 +68,6 @@ public class ObstacleController : MonoBehaviour
         {
             gameObject.transform.position = new Vector3(50f, 3.5f, 0);
             gameObject.SetActive(false);
-            op.ReturnInstance();
         }
     }
 }

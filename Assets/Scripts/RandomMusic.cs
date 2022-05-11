@@ -14,7 +14,7 @@ public class RandomMusic : MonoBehaviour
     void Start()
     {
         _as = GetComponent<AudioSource>();
-        AudioClip clip = audioClipArray[Random.Range(0, audioClipArray.Length - 1)];
+        AudioClip clip = audioClipArray[Random.Range(0, audioClipArray.Length)];
         _as.PlayOneShot(clip);
     }
 
@@ -22,7 +22,7 @@ public class RandomMusic : MonoBehaviour
     {
         if (!_as.isPlaying)
         {
-            AudioClip clip = audioClipArray[Random.Range(0, audioClipArray.Length - 1)];
+            AudioClip clip = audioClipArray[Random.Range(0, audioClipArray.Length)];
             _as.PlayOneShot(clip);
         }
     }

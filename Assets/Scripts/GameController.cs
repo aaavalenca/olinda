@@ -23,29 +23,18 @@ public class GameController : MonoBehaviour
         Application.targetFrameRate = 60;
     }
     
-    // Start is called before the first frame update
     void Start()
     {
         StartCoroutine("SpawnObstacle");
     }
     
-
-    // Update is called once per frame
-    void Update()
-    {
-    }
-
     private void FixedUpdate()
     {
-        
         groundSpeed += 0.0001f;
-        
-        if (timeObstacle > 1)
+        if (timeObstacle > 1f)
         {
-            timeObstacle -= 0.0001f;
+            timeObstacle -= 0.00025f;
         }
-
-        
     }
 
     IEnumerator SpawnObstacle()
@@ -57,17 +46,13 @@ public class GameController : MonoBehaviour
 
         if (speedObstacle < 15)
         {
-            speedObstacle += 0.25f;
+            speedObstacle += 0.2f;
         }
-
         StartCoroutine("SpawnObstacle");
-
-
     }
 
     public void GameOver()
     {
         gameOver.EndGame();
     }
-    
 }

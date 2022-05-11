@@ -198,7 +198,7 @@ public class PlayerController : MonoBehaviour
             _as.PlayOneShot(_as.clip);
             axeMat.color = Color.green;
             axeProtects = true;
-        } else if (collision.CompareTag("Boi"))
+        } else if (collision.CompareTag("Boi") && !axeProtects)
         {
             gameController.GameOver();
         } else if (collision.CompareTag("Crowd") && !axeProtects)
