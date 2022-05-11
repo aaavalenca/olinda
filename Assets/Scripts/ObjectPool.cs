@@ -7,9 +7,8 @@ public class ObjectPool : MonoBehaviour
 {
     public static Dictionary<string, Queue<GameObject>> Pool1;
     private GameObject[] prefabs;
-    //private readonly string[] keys = { "Agua", "Axe", "1", "2", "3", "4", "Boi" };
     private List<string> keys;
-
+    // 0 - "Agua"; 1- "Axe"; 2 - "Bloco 1"; 3 - "Bloco 2"; 4 - "Bloco 3"; 5 - "Bloco 4"; 6 - "Boi";
     private int[] pn = { 0, 0, 1, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 6, 6 };
 
     private Queue<GameObject> iQueue;
@@ -52,9 +51,7 @@ public class ObjectPool : MonoBehaviour
             Pool1.Add(i.tag, queue);
 
         }
-
-        
-        
+ 
     }
 
     public GameObject GetInstance()

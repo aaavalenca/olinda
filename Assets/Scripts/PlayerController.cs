@@ -42,6 +42,8 @@ public class PlayerController : MonoBehaviour
     private bool up;
     private bool isFlashRedStarted = false;
     
+    private AudioSource _as;
+    
     
     void Awake () {
         QualitySettings.vSyncCount = 0;  // VSync must be disabled
@@ -58,6 +60,7 @@ public class PlayerController : MonoBehaviour
         axeMat = GetComponent<SpriteRenderer>().material;
         ground = GameObject.FindGameObjectWithTag("RotatingGround");
         groundRotation = ground.GetComponent<GroundRotation>();
+        _as = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -173,6 +176,8 @@ public class PlayerController : MonoBehaviour
         
         if (collision.CompareTag("Agua"))
         {
+            _as.PlayOneShot(_as.clip);
+
             Vector3 pos = drain.position;
 
             if (life > originalLife - 30)
@@ -190,6 +195,7 @@ public class PlayerController : MonoBehaviour
         }
         else if (collision.CompareTag("Axe"))
         {
+            _as.PlayOneShot(_as.clip);
             axeMat.color = Color.green;
             axeProtects = true;
         } else if (collision.CompareTag("Boi"))
