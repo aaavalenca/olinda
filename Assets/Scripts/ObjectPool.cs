@@ -98,13 +98,13 @@ public class ObjectPool : MonoBehaviour
     public GameObject GetInstance()
     {
         
-        if (Time.time < 60f)
+        if (Time.time < 80f)
         {
             purva = 0;
-        } else if (Time.time >= 60 && Time.time < 66)
+        } else if (Time.time >= 80 && Time.time < 86)
         {
             purva = 1;
-        } else if (Time.time >= 66 && Time.time < 120)
+        } else if (Time.time >= 86 && Time.time < 120)
         {
             purva = 2;
         }

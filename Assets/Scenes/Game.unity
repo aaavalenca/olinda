@@ -881,7 +881,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &683372561
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2342,10 +2342,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   groundSpeed: 2.5
   objectPool: {fileID: 2109286744}
-  timeObstacle: 7.5
+  timeObstacle: 8.5
   timeDecrement: 0.0005
   speedObstacleIncrement: 0.15
-  speedObstacle: 3.5
+  speedObstacle: 5
   gameOver: {fileID: 1818459345}
 --- !u!1 &1908600726
 GameObject:
@@ -2724,7 +2724,7 @@ PrefabInstance:
       objectReference: {fileID: 208731320}
     - target: {fileID: 5836294191417832919, guid: aab9085affc1840d09defdb3634d0b17, type: 3}
       propertyPath: life
-      value: 400
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 5836294191417832919, guid: aab9085affc1840d09defdb3634d0b17, type: 3}
       propertyPath: drain

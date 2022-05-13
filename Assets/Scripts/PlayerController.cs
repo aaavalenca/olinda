@@ -67,12 +67,12 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         Vector3 pos = transform.position;
-        if (axeMat.color == Color.white)
+        /*if (axeMat.color == Color.white)
         {
-            Color tmp = Color.clear;
+            Color tmp = Color.red;
             tmp.a = 0f;
             redScreen.color = tmp;
-        }
+        }*/
 
         
         // Damage from rotation
@@ -198,7 +198,10 @@ public class PlayerController : MonoBehaviour
             gameController.GameOver();
         } else if (collision.CompareTag("Crowd") && !axeProtects)
         {
-            StartCoroutine("FadeInRed");
+            Color tmp = Color.red;
+            tmp.a = 0.3f;
+            redScreen.color = tmp;
+            //StartCoroutine("FadeInRed");
         }
     }
 

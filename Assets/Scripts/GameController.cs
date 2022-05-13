@@ -33,7 +33,7 @@ public class GameController : MonoBehaviour
     private void FixedUpdate()
     {
         groundSpeed += 0.0001f;
-        if (timeObstacle > 1.1f)
+        if (timeObstacle > 1.6f)
         {
             timeObstacle -= timeDecrement;
         }
@@ -46,7 +46,7 @@ public class GameController : MonoBehaviour
         GameObject obstacle = objectPool.GetInstance();
         obstacle.SetActive(true);
 
-        if (speedObstacle < 15)
+        if (speedObstacle < 22)
         {
             speedObstacle += speedObstacleIncrement;
         }
